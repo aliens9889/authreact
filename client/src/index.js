@@ -6,6 +6,7 @@ import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
 
 import App from './components/app';
+import Signin from './components/auth/signin';
 import Signup from './components/auth/signup';
 import Signout from './components/auth/signout';
 import RequireAuth from './components/auth/require_auth';
@@ -29,6 +30,7 @@ ReactDOM.render(
     <Router history={browserHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={Welcome} />
+        <Route path="signin" component={Signin} />
         <Route path='signup' component={Signup} />
         <Route path='feature' component={RequireAuth(Feature)} />
         <Route path='signout' component={Signout} />
