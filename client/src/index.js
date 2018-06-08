@@ -6,6 +6,7 @@ import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
 
 import App from './components/app';
+import Signup from './components/auth/signup';
 import Welcome from './components/welcome';
 import reducers from './reducers';
 
@@ -17,6 +18,7 @@ ReactDOM.render(
     <Router history={browserHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={Welcome} />
+        <Route path='signup' component={Signup} />
       </Route>
     </Router>
   </Provider>
